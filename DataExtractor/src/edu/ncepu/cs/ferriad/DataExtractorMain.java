@@ -124,10 +124,14 @@ public class DataExtractorMain {
 	}
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-        File file = new File(".\\rawdata\\200401daily.txt");
-        if(file.exists())
-        readTxtFile(file);
-        
+		File dataFilePackage = new File(".\\rawdata\\");
+		File[] dataFiles = dataFilePackage.listFiles();
+		for(File tempData: dataFiles){
+        readTxtFile(tempData);
+        }
+//      File file = new File(".\\rawdata\\200401daily.txt");
+//      if(file.exists())
+		
 //        File file1 = new File(".\\rawdata\\201104daily.txt");
 //        if(file1.exists())
 //        readTxtFile(file1);
