@@ -127,6 +127,10 @@ public class DataExtractorMain {
         File file = new File(".\\rawdata\\200401daily.txt");
         if(file.exists())
         readTxtFile(file);
+        
+//        File file1 = new File(".\\rawdata\\201104daily.txt");
+//        if(file1.exists())
+//        readTxtFile(file1);
                
 	}
 }
