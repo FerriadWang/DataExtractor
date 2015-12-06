@@ -10,7 +10,7 @@ import java.io.UnsupportedEncodingException;
 
 public class DataExtractorMain {
 	private String[] city_data= new String[9];
-	private static final String dirHead = ".\\generatedata\\";
+	//private static final String dirHead = ".\\generatedata\\";
 	public static boolean createFile(File file){
 		boolean flag = false;
 		try{
@@ -33,6 +33,7 @@ public class DataExtractorMain {
 		br=new BufferedReader(fileReader);
 		while((dataLine=br.readLine())!=null){
 			String locnum = dataLine.substring(0, 5);
+			dataLine = dataLine.replaceAll("\\s", "");
 			String city = null;
 			switch(locnum){
 			case "94846":
@@ -123,7 +124,7 @@ public class DataExtractorMain {
 	}
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-        File file = new File(".\\rawdata\\201104daily.txt");
+        File file = new File(".\\rawdata\\200401daily.txt");
         if(file.exists())
         readTxtFile(file);
                
